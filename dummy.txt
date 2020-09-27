@@ -1,1 +1,3 @@
 This is only a duummy file bound to vcs
+
+I edited file on remote repository 

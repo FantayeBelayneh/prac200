@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello_message"> ሃሎ መላው ዓለም! " </string>
+    <string name ="app_name"> AndroidAssignments</string>
+    <string name = "ButtonText"> መጨቁን ነኝ </string>>
+</resources>

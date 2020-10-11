@@ -2,5 +2,7 @@
 <resources>
     <string name="hello_message"> ሃሎ መላው ዓለም! " </string>
     <string name ="app_name"> AndroidAssignments</string>
-    <string name = "ButtonText"> መጨቁን ነኝ </string>>
+    <string name = "ButtonText"> መጨቁን ነኝ </string>
+    <string name="Login"> መግቢያ </string>
+    <string name="password"> ቁልፍ ቃል </string>
 </resources>

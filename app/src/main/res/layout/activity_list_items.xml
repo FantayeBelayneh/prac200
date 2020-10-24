@@ -9,6 +9,7 @@
     android:columnCount="2"
     android:rowCount="2"
     android:layout_columnWeight="1"
+
     android:layout_gravity="fill"
     tools:context=".ListItemsActivity">
 
@@ -39,4 +40,12 @@
 
         android:contentDescription="@string/ImageButton"
         app:srcCompat="@android:drawable/ic_menu_camera" />
+
+    <Switch
+        android:id="@+id/switcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:text="Switch" />
 </GridLayout>

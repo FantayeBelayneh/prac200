@@ -3,10 +3,19 @@
     <string name="hello_message"> ሃሎ መላው ዓለም! " </string>
     <string name ="app_name"> AndroidAssignments</string>
     <string name = "ButtonText"> መጨቁን ነኝ </string>
+    <string name="ButtonText2"> ወደ ወግ ጥረቃ   </string>
     <string name="Login"> መግቢያ </string>
     <string name="password"> ቁልፍ ቃል </string>
-    <string name="RadioButton"> Radio Button </string>
-    <string name="CheckBox"> Check Box </string>
-    <string name="ImageButton"> Image Button </string>
-    <string name="LoginButtonText"> Login Button Text </string>
+    <string name="RadioButton"> መዘውር </string>እንሂድ
+    <string name="CheckBox"> የምርጫ ሳጥን  </string>
+    <string name="ImageButton"> ምስል </string>
+    <string name="LoginButtonText"> እንጀምር </string>
+
+    <string name="dialog_message"> ተግባርዎን አጠናቀዋልን? </string>
+    <string name="dialog_title"> ስለ  </string>
+
+    <string name="ok"> OK </string>
+    <string name="cancel"> ይቅር </string>
+    <string name="btnStartChatLabel">" እናውጋ"</string>
+    <string name ="chat_send_button_label"> ይላክ </string>
 </resources>

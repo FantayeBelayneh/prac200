@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     protected static final String ACTIVITY_NAME = "MainActivity";
@@ -17,14 +18,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.i(ACTIVITY_NAME, "In onCreate()");
 
-        Button myButton = (Button) findViewById(R.id.button);
-        myButton.setOnClickListener(new View.OnClickListener() {
+        Button toListItems = (Button) findViewById(R.id.button);
+        toListItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (MainActivity.this, ListItemsActivity.class);
                 startActivityForResult(intent, 10);
             }
         });
+
+
     }
 
 
@@ -32,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 10) Log.i(ACTIVITY_NAME, "Returned to MainActivity.onActivityResult");
+        String messagePassed = data.getStringExtra("Response");
+        Toast.makeText(this, messagePassed, Toast.LENGTH_LONG).show();
     }
 
     @Override

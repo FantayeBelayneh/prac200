@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.i(ACTIVITY_NAME, "In onCreate()");
 
-        Button toListItems = (Button) findViewById(R.id.button);
+        Button toListItems =   findViewById(R.id.button);
+        Button btngoChat = findViewById(R.id.btnGoChat);
         toListItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btngoChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, StartActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

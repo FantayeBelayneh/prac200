@@ -15,7 +15,7 @@
     <string name="dialog_title"> Activity Status </string>
     <string name="ok"> OK </string>
     <string name="cancel"> Cancel </string>
-
-    <string name="btnStartChatLabel"> Start Chat </string>
-    <string name="chat_send_button_label"> Send </string>
+    <string name="go_chat"> Go Chat </string>
+    <string name="start_chat"> Start Chat </string>
+    <string name="send_chat"> Send </string>
 </resources>

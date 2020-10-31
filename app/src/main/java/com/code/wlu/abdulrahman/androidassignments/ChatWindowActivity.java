@@ -1,5 +1,6 @@
 package com.code.wlu.abdulrahman.androidassignments;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -36,8 +37,8 @@ public class ChatWindowActivity extends AppCompatActivity {
         btnn =    findViewById(R.id.mybutton);
         lv =   findViewById(R.id.mylistview);
         tv =   findViewById(R.id.chat_text);
-        chat_messages = new ArrayList<String>();
-        final ChatAdapter messageAdapter =new ChatAdapter( ChatWindowActivity.this);
+        chat_messages = new ArrayList<>();
+        final ChatAdapter messageAdapter =new ChatAdapter( ChatWindowActivity.this, chat_messages);
         messageAdapter.mlist = chat_messages;
         lv.setAdapter (messageAdapter);
 
@@ -46,15 +47,13 @@ public class ChatWindowActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String chat = tv.getText().toString();
                 chat_messages.add(chat);
-                messageAdapter.mlist = chat_messages;
-                messageAdapter.notifyDataSetChanged();
+                //messageAdapter.mlist = chat_messages;
+                //messageAdapter.notifyDataSetChanged();
                 tv.setText("");
             }
         });
 
-    };
-
-
+    }
     @Override
     protected void onResume() {
         super.onResume();
@@ -91,9 +90,10 @@ public class ChatWindowActivity extends AppCompatActivity {
         private Context mContext;
         private LayoutInflater mLayoutInflater = null;
 
-        public ChatAdapter(Context ctx ) {
+        public ChatAdapter(Context ctx , ArrayList<String> mlist_) {
             super(ctx, 0);
              mContext = ctx;
+             mlist = mlist_;
         }
 
         @Override
@@ -106,24 +106,36 @@ public class ChatWindowActivity extends AppCompatActivity {
         {
             return mlist.get(position) ;
         }
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent)
+
+        @NonNull
+        public View getView(int position, View convertView,  @NonNull ViewGroup  parent)
         {
+            Log.d("AAAAAAAA300", "getView received a call");
             LayoutInflater inflater = ChatWindowActivity.this.getLayoutInflater();
             View result = null ;
 
             if(position%2 == 0) {
-                result = inflater.inflate(R.layout.chat_row_incoming, parent, false); //null);
+                //??result = inflater.inflate(R.layout.chat_row_incoming, parent, false); //null);
+                convertView = inflater.inflate(R.layout.chat_row_incoming, parent, false); //null);
             }
             else {
-                result = inflater.inflate(R.layout.chat_row_outgoing, parent, false); //null);
+                //??result = inflater.inflate(R.layout.chat_row_outgoing, parent, false); //null);
+                convertView= inflater.inflate(R.layout.chat_row_outgoing, parent, false); //null);
             }
-            TextView message =  result.findViewById(R.id.message_text);
-            message.setText(getItem(position)  ); // get the string at position
+            //?? TextView message =  result.findViewById(R.id.message_text);
+
+            TextView message =  convertView.findViewById(R.id.message_text);
+
+            message.setText(getItem(position)); // get the string at position
+
+
+
+            //message.setText("I lliked the food." );
 
             //Log.d(debug_HINT, "This is what you typed " + mlist.get(position).toString()  );
             //Log.d(debug_HINT, "This is what you assigned " + message.getText().toString()  );
-            return result;
+            //return result;
+            return convertView;
         }
 
     }

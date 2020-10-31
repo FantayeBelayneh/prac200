@@ -18,9 +18,5 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:src="@android:drawable/sym_call_incoming"
-        app:srcCompat="@android:drawable/sym_call_incoming"
-
-          />
-
-
+        app:srcCompat="@android:drawable/sym_call_incoming"/>
 </LinearLayout>

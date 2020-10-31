@@ -27,7 +27,7 @@ public class ChatWindowActivity extends AppCompatActivity {
     ListView lv;
     EditText tv;
     ArrayList<String> chat_messages;
-    //
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +39,7 @@ public class ChatWindowActivity extends AppCompatActivity {
         tv =   findViewById(R.id.chat_text);
         chat_messages = new ArrayList<>();
         final ChatAdapter messageAdapter =new ChatAdapter( ChatWindowActivity.this, chat_messages);
-        messageAdapter.mlist = chat_messages;
+
         lv.setAdapter (messageAdapter);
 
         btnn.setOnClickListener(new View.OnClickListener() {
@@ -47,8 +47,6 @@ public class ChatWindowActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String chat = tv.getText().toString();
                 chat_messages.add(chat);
-                //messageAdapter.mlist = chat_messages;
-                //messageAdapter.notifyDataSetChanged();
                 tv.setText("");
             }
         });
@@ -110,32 +108,19 @@ public class ChatWindowActivity extends AppCompatActivity {
         @NonNull
         public View getView(int position, View convertView,  @NonNull ViewGroup  parent)
         {
-            Log.d("AAAAAAAA300", "getView received a call");
             LayoutInflater inflater = ChatWindowActivity.this.getLayoutInflater();
-            View result = null ;
+            View result ;
 
             if(position%2 == 0) {
-                //??result = inflater.inflate(R.layout.chat_row_incoming, parent, false); //null);
-                convertView = inflater.inflate(R.layout.chat_row_incoming, parent, false); //null);
+                result = inflater.inflate(R.layout.chat_row_incoming, parent, false); //null);
             }
             else {
-                //??result = inflater.inflate(R.layout.chat_row_outgoing, parent, false); //null);
-                convertView= inflater.inflate(R.layout.chat_row_outgoing, parent, false); //null);
+                result= inflater.inflate(R.layout.chat_row_outgoing, parent, false); //null);
             }
-            //?? TextView message =  result.findViewById(R.id.message_text);
-
-            TextView message =  convertView.findViewById(R.id.message_text);
-
+            TextView message =  result.findViewById(R.id.message_text);
             message.setText(getItem(position)); // get the string at position
 
-
-
-            //message.setText("I lliked the food." );
-
-            //Log.d(debug_HINT, "This is what you typed " + mlist.get(position).toString()  );
-            //Log.d(debug_HINT, "This is what you assigned " + message.getText().toString()  );
-            //return result;
-            return convertView;
+            return result;
         }
 
     }

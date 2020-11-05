@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     protected static final String ACTIVITY_NAME = "MainActivity";
+    Button test_tool_bar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,17 @@ public class MainActivity extends AppCompatActivity {
 
         Button toListItems =   findViewById(R.id.button);
         Button btngoChat = findViewById(R.id.btnGoChat);
+        test_tool_bar = findViewById(R.id.btnTestToolBar);
+
+        test_tool_bar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
+                Intent tooltest = new Intent(MainActivity.this, TestToolbar.class);
+                startActivity(tooltest);
+            }
+        });
+
+
         toListItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

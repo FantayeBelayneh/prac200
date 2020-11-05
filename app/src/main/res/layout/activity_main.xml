@@ -43,4 +43,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
+
+    <Button
+        android:id="@+id/btnTestToolBar"
+        android:layout_width="242dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/testtoolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

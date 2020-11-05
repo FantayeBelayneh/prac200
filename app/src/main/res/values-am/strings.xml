@@ -20,4 +20,6 @@
     <string name ="send_chat"> ይላክ </string>
 
     <string name="go_chat"> Go Chat </string>
+    <string name="testtoolbar"> ቱል ባር ሙከራ </string>
+    <string name="title_activity_test_toolbar"> Test </string>
 </resources>

@@ -3,8 +3,10 @@ package com.code.wlu.abdulrahman.androidassignments;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,15 +17,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class ChatWindowActivity extends AppCompatActivity {
+public class ChatWindowActivity extends AppCompatActivity  {
     protected static final String ACTIVITY_NAME = "ChatWindowActivity";
     protected static final String debug_HINT = "PROB_INVESTIGATION";
 
-    Button btnn;
+
+    private ChatDatabaseHelper dbOperations;
+    private SQLiteDatabase database;
+    Button send_button;
     ListView lv;
     EditText tv;
     ArrayList<String> chat_messages;
@@ -33,20 +37,28 @@ public class ChatWindowActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_window);
         Log.i(ACTIVITY_NAME, "In onCreate()");
+        Context x =  this;
 
-        btnn =    findViewById(R.id.mybutton);
+        dbOperations = new ChatDatabaseHelper(x);
+        database = dbOperations.getWritableDatabase();
+
+        send_button =    findViewById(R.id.mybutton);
         lv =   findViewById(R.id.mylistview);
         tv =   findViewById(R.id.chat_text);
         chat_messages = new ArrayList<>();
+        LoadDataToArray(chat_messages);
+
         final ChatAdapter messageAdapter =new ChatAdapter( ChatWindowActivity.this, chat_messages);
 
         lv.setAdapter (messageAdapter);
 
-        btnn.setOnClickListener(new View.OnClickListener() {
+        send_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String chat = tv.getText().toString();
                 chat_messages.add(chat);
+                //dbOperations.addChatMessage(chat, database);
+                createItem(chat);
                 tv.setText("");
             }
         });
@@ -81,6 +93,26 @@ public class ChatWindowActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.i(ACTIVITY_NAME, "In onDestroy()");
+    }
+
+    public void createItem(String chat_message) {
+        ContentValues values = new ContentValues();
+        values.put(ChatDatabaseHelper.KEY_MESSAGE, chat_message);
+        long insertId = database.insert(ChatDatabaseHelper.TABLE_MESSAGES, null, values);
+    }
+
+    public void LoadDataToArray(ArrayList<String> chatMessages)
+    {
+        String query = "SELECT " + ChatDatabaseHelper.KEY_MESSAGE + " FROM " + ChatDatabaseHelper.TABLE_MESSAGES;
+        final Cursor cursor = database.rawQuery( query, null);
+
+        if (cursor.moveToFirst()){
+             while(!cursor.isAfterLast()){
+                 chatMessages.add(cursor.getString(cursor.getColumnIndex(ChatDatabaseHelper.KEY_MESSAGE )));
+                 cursor.moveToNext();
+            }
+        }
+        cursor.close();
     }
 
     class ChatAdapter  extends ArrayAdapter<String>  {

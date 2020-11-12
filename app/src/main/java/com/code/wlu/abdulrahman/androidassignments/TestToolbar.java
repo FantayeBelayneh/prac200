@@ -25,7 +25,7 @@ import android.widget.Toast;
 public class TestToolbar extends AppCompatActivity  {
     Snackbar snackbar ;
     ImageButton ib;
-    String message;
+    String message ="You selected item 1";
     EditText edit;
 
     @Override
@@ -63,7 +63,7 @@ public class TestToolbar extends AppCompatActivity  {
             case R.id.action_one:
                 Log.d("TestToolbar", "Option 1 selected");
                 //Toast.makeText(this, "You chose option 1", Toast.LENGTH_LONG).show();
-                    Snackbar.make(  findViewById(android.R.id.content),"You selected item 1", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                    Snackbar.make(  findViewById(android.R.id.content),message, Snackbar.LENGTH_LONG).setAction("Action", null).show();
                 break;
             case R.id.action_two:
                 //Log.d("TestToolbar", "Option 2 selected");

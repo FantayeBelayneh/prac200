@@ -21,8 +21,7 @@
 
     <string name="testtoolbar"> Test Tool Bar</string>
     <string name="title_activity_test_toolbar"> Test </string>
-
-
+    <string name="login_name">login name</string>
 
 
     <!-- Strings used for fragments for navigation -->

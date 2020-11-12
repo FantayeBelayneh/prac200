@@ -9,15 +9,17 @@
 
     <ListView
         android:id="@+id/mylistview"
-        android:layout_width="414dp"
-        android:layout_height="789dp"
+        android:layout_width="335dp"
+        android:layout_height="451dp"
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="132dp"
         android:scrollingCache="false"
         app:layout_constraintBottom_toTopOf="@+id/mybutton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"        />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/chat_text"

@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button toListItems =   findViewById(R.id.button);
         Button btngoChat = findViewById(R.id.btnGoChat);
+
+
         test_tool_bar = findViewById(R.id.btnTestToolBar);
 
         test_tool_bar.setOnClickListener(new View.OnClickListener() {
@@ -43,8 +45,15 @@ public class MainActivity extends AppCompatActivity {
         btngoChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, StartActivity.class);
-                startActivity(intent);
+
+                try {
+                    Intent intent = new Intent(MainActivity.this, ChatWindowActivity.class);
+                    startActivity(intent);
+                }
+                catch (Exception z)
+                {
+                    Log.i(ACTIVITY_NAME,  z.getMessage().toString());
+                }
             }
         });
 

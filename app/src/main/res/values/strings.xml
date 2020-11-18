@@ -1,0 +1,30 @@
+<resources>
+    <string name="hello_message"> Hello World!" </string>
+    <string name="app_name"> AndroidAssignments</string>
+    <string name="ButtonText"> I\'m a button for List Items  </string>
+
+    <string name="ButtonText2"> Let\'s Go to the Chat Room </string>
+
+    <string name="Login"> Login </string>
+    <string name="password"> password </string>
+    <string name="RadioButton"> Radio Button </string>
+    <string name="CheckBox"> Check Box </string>
+    <string name="ImageButton"> Image Button </string>
+    <string name="LoginButtonText"> Login </string>
+    <string name="dialog_message"> Do you want to finish the activity </string>
+    <string name="dialog_title"> Activity Status </string>
+    <string name="ok"> OK </string>
+    <string name="cancel"> Cancel </string>
+    <string name="go_chat"> Go Chat </string>
+    <string name="start_chat"> Start Chat </string>
+    <string name="send_chat"> Send </string>
+
+    <string name="testtoolbar"> Test Tool Bar</string>
+    <string name="title_activity_test_toolbar"> Test </string>
+    <string name="login_name">login name</string>
+
+
+    <!-- Strings used for fragments for navigation -->
+
+
+</resources>

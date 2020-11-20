@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:tag='style=""'
+    android:visibility="visible"
+    tools:context=".WeatherForecast">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="21dp" />
+
+    <TextView
+        android:id="@+id/tvCurrentTemperature"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="472dp"
+        android:text="Current temperature " />
+
+    <TextView
+        android:id="@+id/tvMinTemperature"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="443dp"
+        android:text="Minimum temperature " />
+
+    <TextView
+        android:id="@+id/tvMaxTemperature"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="414dp"
+        android:text="Maximum temperature" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="307dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="362dp"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+
+</RelativeLayout>

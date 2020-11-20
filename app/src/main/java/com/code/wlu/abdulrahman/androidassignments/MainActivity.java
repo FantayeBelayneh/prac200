@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button toListItems =   findViewById(R.id.button);
         Button btngoChat = findViewById(R.id.btnGoChat);
-
+        Button btnWeather = findViewById(R.id.btnWeatherForecast);
 
         test_tool_bar = findViewById(R.id.btnTestToolBar);
 
@@ -54,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Log.i(ACTIVITY_NAME,  z.getMessage().toString());
                 }
+            }
+        });
+
+        btnWeather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent weather = new Intent(MainActivity.this, WeatherForecast.class);
+                startActivity(weather);
             }
         });
 

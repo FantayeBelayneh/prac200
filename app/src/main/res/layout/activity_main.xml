@@ -56,4 +56,16 @@
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
 
+    <Button
+        android:id="@+id/btnWeatherForecast"
+        android:layout_width="242dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="240dp"
+        android:text="@string/weather_forecast"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

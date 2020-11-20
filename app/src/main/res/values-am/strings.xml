@@ -23,4 +23,5 @@
     <string name="testtoolbar"> ቱል ባር ሙከራ </string>
     <string name="title_activity_test_toolbar"> Test </string>
     <string name="login_name">የመግቢያ ስም</string>
+    <string name="weather_forecast">አየር ንብረት ትንበያ</string>
 </resources>

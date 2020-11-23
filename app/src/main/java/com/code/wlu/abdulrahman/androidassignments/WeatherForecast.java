@@ -59,8 +59,6 @@ public class WeatherForecast extends AppCompatActivity {
 
     class ForecastQuery extends AsyncTask<String, String, String> {
 
-
-
         public String ns = null;
         String MIN = "", MAX = "", CURRENT_TEMPERATURE = "";
         Bitmap bmpWEATHER;

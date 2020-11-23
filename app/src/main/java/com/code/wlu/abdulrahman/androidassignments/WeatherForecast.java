@@ -85,14 +85,14 @@ public class WeatherForecast extends AppCompatActivity {
                 conn.connect();
                 weather = parse(conn.getInputStream());
 
-                try {
+                /*try {
                     InputStream in = new java.net.URL(urldisplay).openStream();
                     bitmapFile = BitmapFactory.decodeStream(in);-
 
                 } catch (Exception e) {
                     Log.e("Error", e.getMessage());
                     e.printStackTrace();
-                }
+                }*/
 
 
 
@@ -138,7 +138,7 @@ public class WeatherForecast extends AppCompatActivity {
             tvMax.setText("Maximum temperature :-" + weather.max);
             tvMin.setText("Minimum temperature :-" + weather.min);
             pb.setVisibility(View.VISIBLE);
-            try {
+            /*try {
                 Log.i(ACTIVITY_NAME + " creating file", "before function call");
 
 
@@ -146,7 +146,7 @@ public class WeatherForecast extends AppCompatActivity {
             } catch (IOException e) {
                 Log.i(ACTIVITY_NAME + " creating file", e.getMessage().toString());
                 e.printStackTrace();
-            }
+            }*/
         }
 
         public Entry parse(InputStream in) throws XmlPullParserException, IOException {

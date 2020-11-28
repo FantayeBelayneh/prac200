@@ -66,6 +66,7 @@ public class MessageFragment extends Fragment   {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i(ACTIVITY_NAME, "fragment onCreate");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -82,15 +83,18 @@ public class MessageFragment extends Fragment   {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState)
     {
+        Log.i(ACTIVITY_NAME, "fragment onViewCreated");
         Bundle carryOver = getArguments();
-        msgid = carryOver.getString("msgid", msgid);
+        //msgid = carryOver.getString("msgid", msgid);
         tvmsgID = view.findViewById(R.id.messageID);
         tvMessageContent = view.findViewById(R.id.messageText);
         String msg_content = readMessage();
         tvMessageContent.setText(msg_content);
-        tvmsgID.setText("Message ID =:- " + msgid);
+        tvmsgID.setText("Message ID =:- " + msgid);  
 
         deleteButton = view.findViewById(R.id.deletemessage);
+
+        //deleteButton.setVisibility(View.VISIBLE);
 
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override

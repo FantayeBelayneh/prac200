@@ -107,10 +107,11 @@ public class ChatWindowActivity extends AppCompatActivity implements OnItemSelec
                         ft.replace(R.id.myFramLayout, messagePanel);
                         ft.commit();
                     } else {
-                        Log.i(ACTIVITY_NAME, "Entering path 2");
+                        Log.i(ACTIVITY_NAME, "Entering path 2 message is = " + lMessageID);
                         Intent msg = new Intent(ChatWindowActivity.this, MessageDetails.class);
-                        msg.putExtra("MessageID", String.valueOf(lMessageID)); //
+                        msg.putExtra("msgID", String.valueOf(lMessageID)); //
                         startActivityForResult(msg, result);
+                        //startActivity(msg);
                     }
                 }
                 catch (Exception x)

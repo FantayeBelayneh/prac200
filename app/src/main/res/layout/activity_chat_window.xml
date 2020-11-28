@@ -9,22 +9,22 @@
 
     <ListView
         android:id="@+id/mylistview"
-        android:layout_width="350dp"
-        android:layout_height="481dp"
+        android:layout_width="380dp"
+        android:layout_height="517dp"
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="132dp"
         android:scrollingCache="false"
         app:layout_constraintBottom_toTopOf="@+id/mybutton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/chat_text"
-        android:layout_width="309dp"
-        android:layout_height="62dp"
+        android:layout_width="264dp"
+        android:layout_height="69dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="4dp"
@@ -37,19 +37,19 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.989" />
+        app:layout_constraintVertical_bias="0.829" />
 
     <Button
         android:id="@+id/mybutton"
-        android:layout_width="96dp"
-        android:layout_height="41dp"
+        android:layout_width="84dp"
+        android:layout_height="68dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="112dp"
         android:layout_toEndOf="@+id/chat_text"
         android:text="@string/send_chat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toEndOf="@+id/chat_text" />
 
 

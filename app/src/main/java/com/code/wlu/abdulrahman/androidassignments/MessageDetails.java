@@ -22,18 +22,24 @@ public class MessageDetails extends AppCompatActivity {
         setContentView(R.layout.activity_message_details);
         dbOperations = new ChatDatabaseHelper(this);
         database = dbOperations.getWritableDatabase();
-        String sval = getIntent().getStringExtra("MessageID");
+        String sval = getIntent().getStringExtra("msgID");
+        try {
 
-        if (savedInstanceState == null) {
-            MessageFragment firstFragment = new MessageFragment();
-            firstFragment.msgid = sval;
-            firstFragment.database = database;
-            firstFragment.dbOperations = dbOperations;
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.add(R.id.messagedetail1, firstFragment);
-            ft.commit();
+            if (savedInstanceState == null) {
+
+
+                MessageFragment firstFragment = new MessageFragment();
+                firstFragment.msgid = sval;
+                firstFragment.database = database;
+                firstFragment.dbOperations = dbOperations;
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.framMessageDetail_x, firstFragment);  //framMessageDetail    framMessageDetail_x  messagedetail1
+                ft.commit();
+            }
+        } catch (Exception aa)
+        {
+            Log.i(ACTIVITY_NAME, aa.getMessage().toString());
         }
-
 
     }
 

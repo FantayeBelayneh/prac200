@@ -90,7 +90,7 @@ public class MessageFragment extends Fragment   {
         tvMessageContent = view.findViewById(R.id.messageText);
         String msg_content = readMessage();
         tvMessageContent.setText(msg_content);
-        tvmsgID.setText("Message ID =:- " + msgid);  
+        tvmsgID.setText("Message ID =:- " + msgid);
 
         deleteButton = view.findViewById(R.id.deletemessage);
 
